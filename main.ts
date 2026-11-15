@@ -18,6 +18,9 @@ import { join } from 'node:path';
 
 const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
+// The poem lives here as one line per array entry, in order. An empty string is
+// a stanza break, and join('\n') reproduces the poem's exact bytes: no trailing
+// line end is added, so the file written is the poem and nothing else.
 const POEM = [
   'I asked it to write the apology.',
   'It wrote it in an hour,',
